@@ -1,0 +1,26 @@
+<div class="page-area">
+    <h2>View Child</h2>
+    <p>
+        Property decorator that configures a view query. The change detector looks for 
+        the first element or the directive matching the selector in the view DOM. If 
+        the view DOM changes, and a new child matches the selector, the property is updated.
+    </p>
+    <hr>
+    <div #box class="text-center">
+        <h2>User Name is <span class="text-success">{{name}}</span></h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center py-5">
+            <button class="btn btn-primary" (click)="changeChildProperty()">Change child Property</button>
+            <br>   
+            <button class="btn btn-warning" (click)="callChildMethod()">Call child Method</button>
+        </div>
+        <div class="col-md-6">
+            <app-component1 >
+                <p #childContent>Shiwarkar family</p>
+            </app-component1>
+        </div>
+    </div>
+
+</div>
+

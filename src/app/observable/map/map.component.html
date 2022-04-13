@@ -1,0 +1,54 @@
+<div class="row">
+    <h2>Map - Transform or modify the data</h2> 
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <strong>Ex - 01</strong>
+            <hr>
+            <p class="bg-light px-2 py-2 border rounded">
+                <strong>Map : </strong> data => 'Video' + data
+             </p>
+             <br>
+             <p>
+                 Message : <strong class="text-success">{{msg1}}</strong>
+             </p>
+        </div>
+        <div class="col-md-4">
+            <strong>Ex - 02</strong>
+            <hr>
+            <p class="bg-light px-2 py-2 border rounded">
+                <strong>Map : </strong> data => data * 3
+             </p>
+             <br>
+             <p>
+                Message : <strong class="text-success">{{msg2}}</strong>
+             </p>
+        </div>
+        <div class="col-md-4">
+            <strong>Ex - 03</strong>
+            <hr>
+            <p class="bg-light px-2 py-2 border rounded">
+                <strong>Map : </strong> data => 'Video' + data
+            </p>
+            <br>
+            <!-- <p> -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Weapons</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let member of msg3">
+                        <th scope="row">{{member.id}}</th>
+                        <td>{{member.name}}</td>
+                        <td>{{member.weapon}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            <!-- </p> -->
+        </div>
+    </div>
+</div>

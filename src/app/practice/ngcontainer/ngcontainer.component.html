@@ -1,0 +1,17 @@
+
+<div class="page-area">
+    <!-- <div class="text-center"> -->
+        <h1>ngContainer</h1>
+        <p>The ng-container allows us to use structural directives without any extra element, making sure that the only DOM changes being applied are those dictated by the directives themselves.
+        <br>This not only increases performance (even so slightly) since the browser ends up rendering less elements but can also be a valuable asset in having cleaner DOMs and styles alike.</p>
+    <!-- </div> -->
+    <hr>
+    <div class="row">
+        <ng-container *ngIf="statusOnline">
+            <div *ngFor="let family of names">
+                {{family.name}}
+            </div>
+        </ng-container>
+    </div>
+
+</div>

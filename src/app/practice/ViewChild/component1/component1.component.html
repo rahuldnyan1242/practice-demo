@@ -1,0 +1,11 @@
+<div class="card" appTestDirective>
+    <div class="card-body">
+      <div class="text-center">
+        <h4>User Name: <span class="text-success">{{userName}}</span></h4> 
+        <button class="btn btn-success" (click)="showAlert()">Show Alert</button>
+        <button class="btn btn-success" (click)="changeColor('#ffb3b3')">RED</button>
+        <button class="btn btn-success" (click)="changeColor('#99ff99')">GREEN</button>
+        <ng-content></ng-content>
+      </div>      
+    </div>
+  </div>

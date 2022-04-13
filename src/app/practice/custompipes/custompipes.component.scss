@@ -1,0 +1,28 @@
+.infoBtn {
+    margin: -5rem auto 0 5rem;
+}
+button {
+    font-size: 0.5rem;
+    margin-left: 0.3rem;
+    // background-color: transparent;
+    border: transparent;
+}
+button:hover {
+    box-shadow: 1px 1px 10px gray;
+}
+
+table{
+    box-shadow: 0px 0px 5px gray;
+    border-radius: 0.7rem;
+}
+
+.exampleContain {
+    display: grid;
+    grid-auto-flow: column dense;
+}
+
+.exmpBtn {
+    width: 5rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+}

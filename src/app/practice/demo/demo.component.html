@@ -1,0 +1,37 @@
+<!-- <p>practice works!</p> -->
+
+<div class="container">
+    <div #warning id="liveAlertPlaceholder"></div>
+    <div class="row">
+        <div class="col-md-3">
+            <input type="text" class="form-control" name="" placeholder="User Name" #usrname>
+      </div>
+      <div class="col-md-3">
+        <button class="btn btn-primary" (click)="createUser(usrname, warning)">Add Product</button>
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="btn btn-light warn" (click)="removeAll()">Remove All</button>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-10">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <td>Sr. No</td>
+                        <td>User Name</td>
+                        <td>Remove</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users; index as i">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{user}}</td>
+                        <td> <button type="button" class="btn btn-danger" (click)="removeUser(i)">X</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

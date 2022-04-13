@@ -1,0 +1,34 @@
+<div class="page-area">
+    <div class="col-md-12">
+        <h1>Http & Observables:</h1>
+        <p>Observables are lazy Push collections of multiple values. 
+            Observables are not like EventEmitters nor are they like Promises for multiple values. Observables may act like EventEmitters in some cases, namely when they are multicasted using RxJS Subjects, but usually they don't act like EventEmitters.
+            <br>
+            Observables are like functions with zero arguments, but generalize those to allow multiple values.
+        </p>
+        <hr>
+        <div class="card">
+            <div class="card-body">
+              <!-- This is some text within a card body. -->
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">UserName</th>
+                    <th scope="col">Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of users, index as i">
+                    <th scope="row">{{user.id}}</th>
+                    <td>{{user.name}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.email}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+    </div>
+</div>

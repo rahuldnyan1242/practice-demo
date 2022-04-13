@@ -1,0 +1,43 @@
+
+<div class="page-area">
+    <!-- <div class="heading"> -->
+        <h2>Lifecycle Hooks</h2>
+        <button class="btn btn-info infoBtn" (click)="toggleInfo()">{{infoBtnLabel}}</button>
+    <!-- </div> -->
+    
+    <div class="container" *ngIf="!hideInfo">
+        <p>
+            An interface that allows you to tap into the lifecycle of directives and components as they are 
+            created, updated, and destroyed. <br><br>
+            Each interface has a single hook method whose name is the interface name prefixed with ng. 
+            For example, the OnInit interface has a hook method named ngOnInit. <br><br>
+            Angular calls these hook methods in the following order:
+        </p>
+        <ul>
+            <li><strong>ngOnChanges:</strong> When an input binding value changes.</li>
+            <li><strong>ngOnInit:</strong> After the first ngOnChanges.</li>
+            <li><strong>ngDoCheck:</strong> Developer's custom change detection.</li>
+            <li><strong>ngAfterContentInit:</strong> After component content initialized.</li>
+            <li><strong>ngAfterContentChecked:</strong> After every check of component content.</li>
+            <li><strong>ngAfterViewInit:</strong> After a component's views are initialized.</li>
+            <li><strong>ngAfterViewChecked:</strong> After every check of a component's views.</li>
+            <li><strong>ngOnDestroy:</strong> Just before the directive is destroyed.</li>
+        </ul>
+    </div>
+    
+    <hr>
+    <div class="card">
+        <div class="card-body">
+            <div class="text-center">
+                <input type="text" placeholder="User Name" #val>
+                <button class="btn btn-success" (click)="changeName(val)">Update</button>
+                <app-hooks [nameValue]="name" *ngIf="compoExist">
+                    NgContentHooks: 
+                </app-hooks>
+                <br>
+                <button class="btn btn-danger" (click)="destroyComponent()">Destroy Component</button>
+            </div>  
+        </div>
+    </div>
+</div>
+

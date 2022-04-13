@@ -1,0 +1,51 @@
+<div class="page-area">
+    <h1>Pipes</h1>
+    <button class="btn btn-info infoBtn" (click)="toggleInfo()">{{infoBtnLabel}}</button>
+
+    <div class="container" *ngIf="!hideInfo">
+        <p>A pipe class must implement the PipeTransform interface. For example, if the name is "myPipe", 
+            use a template binding expression such as the following:
+            <!-- <br><strong>{{ exp | myPipe }}</strong> -->
+            <br>The result of the expression is passed to the pipe's <strong>transform()</strong> method.
+            <br>A pipe must belong to an NgModule in order for it to be available to a template. 
+            To make it a member of an NgModule, list it in the <strong>declarations</strong> field of the NgModule metadata.
+        </p>
+    </div>
+    <hr>
+    <div class="exampleContain">
+        <h2>Custome Pipes Example:</h2>
+        <button class="btn btn-warning exmpBtn" (click)="toggleExmp()">{{exmpBtnLabel}}</button>
+    </div>    
+    <div class="row justify-content-center" *ngIf="!hideExample1">
+        <div class="col-md-10 mb-3">
+            <input type="text" class="form-control" id="search" placeholder="Search Product by Name" [(ngModel)]="nameSearch">
+        </div>
+        <div class="col-md-10">
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of productDetails | filter: nameSearch, index as i">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td *ngIf='product.availability' >
+                        <span class="badge bg-success">Available</span>
+                    </td>
+                    <td *ngIf='!product.availability'>
+                        <span class="badge bg-danger">Not Available</span>    
+                    </td>
+                    </tr>
+                </tbody>
+                </table>
+        </div>
+    </div>    
+    <hr>
+    <h2>Pure & Impure Pipes Example:</h2>
+</div>

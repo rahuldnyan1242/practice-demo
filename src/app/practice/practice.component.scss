@@ -1,0 +1,24 @@
+.container {
+    width: 100%;
+    // outline: 1px solid green;
+    margin-top: 3rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px #d9d9d9;
+
+    .btn-danger{
+        border-radius: 3rem;
+        background-color: #f33;
+        border-color: #f33;
+        color: white;
+        padding: 0.2rem 0.5rem;
+        font-size: 10px;
+        font-weight: bold;
+    }
+    .warn{
+        &:hover {
+            box-shadow: 0px 0px 5px #ff0000;
+        }
+    }
+}
+

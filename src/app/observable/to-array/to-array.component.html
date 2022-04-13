@@ -1,0 +1,35 @@
+<div class="row">
+    <h2>to Array()</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <strong>Interval</strong>
+            <hr>
+            <ul>
+                <li *ngFor="let i of result1">{{ i }}</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <strong>Object Array</strong>
+            <hr>
+            <div class="card">
+                <div class="card-header">Information</div>
+                <div class="card-body">
+                    <p *ngFor="let i of result2"> {{ i.name }} <strong>=> </strong> {{i.skills}} </p>
+                </div>
+            </div>
+            <!-- <ul>
+                <li *ngFor="let i of result2">{{ i.name }}</li>
+            </ul> -->
+        </div>
+        <div class="col-md-4">
+            <strong>Of Operator</strong>
+            <hr>
+            <div class="card">
+                <div class="card-header">Information</div>
+                <div class="card-body">
+                    <p *ngFor="let i of result3"> {{ i }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
