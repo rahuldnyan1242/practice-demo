@@ -29,10 +29,36 @@ import { ProductsComponent } from './products/products.component';
 import { SubjectcompComponent } from './subjectcomp/subjectcomp.component';
 import { Component1Component } from './ViewChild/component1/component1.component';
 import { HomeComponent } from './ViewChild/home/home.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CdChildComponent } from './Change_Detection/cd-child/cd-child.component';
+import { CdParentComponent } from './Change_Detection/cd-parent/cd-parent.component';
 
-
+const practRoutes: Routes = [
+  // {path: 'practice', component: PracticeComponent,
+  //   children: [
+      {path: '', component: PracticeListComponent},
+      {path: 'demo', component: DemoComponent},
+      {path: 'products', children: [
+        {path: '', component: ProductsComponent},
+        {path: 'common', component: CommonComponent}
+      ]},
+      {path: 'ngContent', component: NgcontentComponent},
+      {path: 'ngContainer', component: NgcontainerComponent},
+      {path: 'componentComm', component: ParentComponent},
+      {path: 'exercise', component: ExerciseComponent},
+      {path: 'http', component: HttpobservablesComponent},
+      {path: 'subject', component: SubjectcompComponent},
+      {path: 'lifecycle', component: LifecycleComponent},
+      {path: 'viewchild', component: HomeComponent},
+      {path: 'pipes', component: CustompipesComponent},
+      {path: 'forms', component: FormsComponent},
+      {path: 'template', component: TemplatedrivenformsComponent},
+      {path: 'reactive', component: ReactiveformsComponent},
+      {path: 'changeDetection', component: CdParentComponent}
+    // ]
+  // }
+]
 
 @NgModule({
   declarations: [
@@ -64,13 +90,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FilterPipe,
     FormsComponent,
     TemplatedrivenformsComponent,
-    ReactiveformsComponent
+    ReactiveformsComponent,
+    CdChildComponent,
+    CdParentComponent
   ],
   imports: [
     CommonModule,
-    RouterModule,
+    RouterModule.forChild(practRoutes),
     FormsModule,
     ReactiveFormsModule
   ]
 })
-export class PracticeModule { }
+export class PracticeModule {
+  constructor() {
+    console.log('PracticeModule loaded.')
+  }
+ }

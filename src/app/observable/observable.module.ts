@@ -15,8 +15,26 @@ import { TapComponent } from './tap/tap.component';
 import { TestingComponent } from './testing/testing.component';
 import { ToArrayComponent } from './to-array/to-array.component';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
+const obsRoutes: Routes = [
+  // {path: 'observable', component: ObservableComponent,
+  //   children: [
+      {path: '', component: ListComponent},
+      {path: 'fromEvent', component: FromEventComponent},
+      {path: 'interval', component: IntervalComponent},
+      {path: 'of_from', component: OfFromComponent},
+      {path: 'toArray', component: ToArrayComponent},
+      {path: 'custom', component: CustomComponent},
+      {path: 'testing', component: TestingComponent},
+      {path: 'map', component: MapComponent},
+      {path: 'pluck', component: PluckComponent},
+      {path: 'filter', component: FilterComponent},
+      {path: 'tap', component: TapComponent},
+      {path: 'take', component: TakeComponent},
+  //   ]
+  // }
+]
 
 
 @NgModule({
@@ -39,7 +57,11 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule.forChild(obsRoutes)
   ]
 })
-export class ObservableModule { }
+export class ObservableModule { 
+  constructor() {
+    console.log('ObservableModule loaded.')
+  }
+}

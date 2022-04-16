@@ -1,0 +1,28 @@
+<!-- <p>cd-parent works!</p> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-area">
+                <div class="parent">
+                    <h2>Parent Component</h2>
+                    Name: <input type="text" [(ngModel)]="employee.name"> <br>
+                    Age : 
+                    <button class="btn btn-primary mt-2 mx-2" (click)="employee.age = employee.age - 1">-</button>
+                    <strong class="text-success">{{ employee.age }}</strong> 
+                    <button class="btn btn-primary mt-2 mx-2" (click)="employee.age = employee.age + 1">+</button>
+                    <br>
+                    <button class="btn btn-success my-2" (click)="reaasign()">Re-Assign</button>
+
+                    <pre>{{ employee | json }}</pre>  
+                </div>
+                <div class="chil">
+                    <app-cd-child [employee]="employee" [myData]="myData" ></app-cd-child>
+                </div>
+            </div>          
+        </div>
+    </div>
+    
+</div>
+    
+
